@@ -1,0 +1,11 @@
+#header h1{
+	float: left;
+}
+#loginBox{
+	float: right;
+	width: 100px;
+	margin-bottom: 5px;
+}
+.first-line-search{
+    padding-bottom: 90px;
+}

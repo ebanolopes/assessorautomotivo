@@ -1,0 +1,42 @@
+/* Add here all your CSS customizations */
+.outsidemain{
+	padding-top: 110px;
+}
+.table thead tr th{
+	text-transform: uppercase;
+}
+.cadastros-menu{
+	height: 500px;
+	overflow: auto;
+}
+.hiddenImg{
+	display: none;
+}
+div .table-responsive{
+	font-size: 11px;
+}
+body{
+	color: #0D244C;
+}
+.noborders>tbody>tr>td{
+	border-top: 0px;
+}
+.oddColor{
+	background: #f9f9f9;
+}
+.pairColor{
+	background: #FFF;
+}
+.hiddenInfoLine{
+	display: none;
+	border: 1px solid;
+}
+.formSearch select, .formSearch input[type="text"]{
+	height: 21px;
+	font-size: 10px;
+	padding-top: 1px;
+}
+.tableSearchHeader{
+	background: #5974a3;
+	color: #FFF;
+}
