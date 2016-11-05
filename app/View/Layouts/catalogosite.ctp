@@ -1,3 +1,6 @@
+<?php
+$user = AuthComponent::user();
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -90,13 +93,13 @@
                             <li class="<?php echo ($this->action == 'catalogo')? 'active' : '' ;?>">
                                 <?php echo $this->Html->link('Catálogo',array('controller' => 'catalogos', 'action' => 'catalogo'),array('escape' => false)); ?>
                             </li>
-                            <?php if (AuthComponent::user()): ?>
+                            <?php if ($user): ?>
                               <li class="dropdown">
                                 <a class="dropdown-toggle" href="#">
                                   Cadastros
                                 </a>
                                 <ul class="dropdown-menu cadastros-menu">
-                                <?php $user = AuthComponent::user(); ?>
+                                <?php $user = $user; ?>
                                   <?php if ($user['nivel'] == 'adm'): ?>
                                     <li><?php echo $this->Html->link('Combustível', array('controller' => 'combustivels', 'action' => 'index')); ?></li>
                                     <li><?php echo $this->Html->link('Cilindros', array('controller' => 'cilindros', 'action' => 'index')); ?></li>
@@ -111,12 +114,12 @@
                                     <li><?php echo $this->Html->link('Montadora', array('controller' => 'montadoras', 'action' => 'index')); ?></li>
                                   <?php endif; ?>
                                   <li><?php echo $this->Html->link('Nomenclatura', array('controller' => 'nomenclaturas', 'action' => 'index')); ?></li>
-                                  <?php if (AuthComponent::user()['nivel'] == 'adm'): ?>
+                                  <?php if ($user['nivel'] == 'adm'): ?>
                                     <li><?php echo $this->Html->link('Potência de Motor', array('controller' => 'potenciamotors', 'action' => 'index')); ?></li>
                                     <li><?php echo $this->Html->link('Posição', array('controller' => 'posicaos', 'action' => 'index')); ?></li>
                                   <?php endif; ?>
                                   <li><?php echo $this->Html->link('Produto', array('controller' => 'produtos', 'action' => 'index')); ?></li>
-                                  <?php if (AuthComponent::user()['nivel'] == 'adm'): ?>
+                                  <?php if ($user['nivel'] == 'adm'): ?>
                                     <li><?php echo $this->Html->link('Quantidade de Valvula', array('controller' => 'valvulas', 'action' => 'index')); ?></li>
                                     <li><?php echo $this->Html->link('Sessões', array('controller' => 'sessaos', 'action' => 'index')); ?></li>
                                     <li><?php echo $this->Html->link('Sistema de freios', array('controller' => 'freiosistemas', 'action' => 'index')); ?></li>

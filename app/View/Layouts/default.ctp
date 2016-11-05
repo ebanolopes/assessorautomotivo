@@ -18,6 +18,7 @@
  */
 
 $cakeDescription = __d('cake_dev', 'Assessor Automotivo');
+$user = AuthComponent::user();
 ?>
 <!DOCTYPE html>
 <html>
@@ -47,8 +48,8 @@ $cakeDescription = __d('cake_dev', 'Assessor Automotivo');
 			<h1><?php echo $this->Html->link($cakeDescription, array('controller' => 'gerais', 'action' => 
 		'home')); ?></h1>
 			<div id="loginBox">
-				<?php if (AuthComponent::user()): ?>
-					Olá <strong><?php $user = AuthComponent::user(); echo $user['nome']; ?></strong>!
+				<?php if ($user): ?>
+					Olá <strong><?php echo $user['nome']; ?></strong>!
 					<br />
 					<?php echo $this->Html->link('Sair', array('controller' => 'usuarios', 'action' => 
 		'logout')); ?>
