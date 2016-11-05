@@ -99,7 +99,6 @@ $user = AuthComponent::user();
                                   Cadastros
                                 </a>
                                 <ul class="dropdown-menu cadastros-menu">
-                                <?php $user = $user; ?>
                                   <?php if ($user['nivel'] == 'adm'): ?>
                                     <li><?php echo $this->Html->link('Combustível', array('controller' => 'combustivels', 'action' => 'index')); ?></li>
                                     <li><?php echo $this->Html->link('Cilindros', array('controller' => 'cilindros', 'action' => 'index')); ?></li>
